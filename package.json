@@ -1,0 +1,16 @@
+{
+  "name": "project1",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "pnpm --parallel -r run dev",
+    "build": "pnpm --filter client run build",
+    "start": "pnpm --filter server run start",
+    "lint": "pnpm --filter client run lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
+    "cookie-parser": "^1.4.7",
+    "react-redux": "^9.2.0"
+  }
+}
