@@ -66,8 +66,22 @@ function AppRoutes() {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/verify-email" element={<VerifyEmail />} />
       <Route path="/reset-password" element={<ResetPassword />} />
-      <Route path="/products" element={<Products />} />
-      <Route path="/products/:id" element={<ProductDetails />} />
+      <Route
+        path="/products"
+        element={
+          <ProtectedRoute roles={["customer"]}>
+            <Products />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/products/:id"
+        element={
+          <ProtectedRoute roles={["customer"]}>
+            <ProductDetails />
+          </ProtectedRoute>
+        }
+      />
       <Route
         path="/my-products"
         element={
